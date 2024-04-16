@@ -9,7 +9,7 @@ import palmerpenguins
 df = palmerpenguins.load_penguins()
 
 # Add the title to the App
-ui.page_opts(title="Penguins dashboard", fillable=True)
+ui.page_opts(title="St. Cyr Penguins dashboard", fillable=True)
 
 # Add the sidebar filters, in this case add the checkbox group, which allows the user to select, or deselect each species of penguin.
 with ui.sidebar(title="Filter controls"):
