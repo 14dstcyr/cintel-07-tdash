@@ -90,7 +90,7 @@ with ui.layout_columns():
             )
 
     with ui.card(full_screen=True):
-        ui.card_header("Penguin data", style="color: purple")
+        ui.card_header("Penguin Data", style="color: purple")
 
         @render.data_frame
         def summary_statistics():
