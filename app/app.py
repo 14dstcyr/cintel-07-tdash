@@ -1,3 +1,4 @@
+# Add requirements at the top 
 import seaborn as sns
 from faicons import icon_svg
 
@@ -7,9 +8,10 @@ import palmerpenguins
 
 df = palmerpenguins.load_penguins()
 
+# Add the title to the App
 ui.page_opts(title="Penguins dashboard", fillable=True)
 
-
+# Add the sidebar filters, in this case add the checkbox group, which allows the user to select, or deselect each species of penguin.
 with ui.sidebar(title="Filter controls"):
     ui.input_slider("mass", "Mass", 2000, 6000, 6000)
     ui.input_checkbox_group(
