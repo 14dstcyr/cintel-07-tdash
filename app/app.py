@@ -20,6 +20,8 @@ with ui.sidebar(title="Filter controls"):
         ["Adelie", "Gentoo", "Chinstrap"],
         selected=["Adelie", "Gentoo", "Chinstrap"],
     )
+    
+    # Insert a horizontal line 
     ui.hr()
     ui.h6("Links")
     ui.a(
