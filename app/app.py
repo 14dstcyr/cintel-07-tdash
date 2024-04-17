@@ -5,11 +5,14 @@ from faicons import icon_svg
 from shiny import reactive
 from shiny.express import input, render, ui
 import palmerpenguins 
+from shinywidgets import render_altair
+import soft_dependencies
+
 
 df = palmerpenguins.load_penguins()
 
 # Add the title to the App
-ui.page_opts(title="St. Cyr Penguins dashboard", fillable=True)
+ui.page_opts(title="St. Cyr Penguins Dashboard", fillable=True)
 
 # Add the sidebar filters, in this case add the checkbox group, which allows the user to select, or deselect each species of penguin.
 with ui.sidebar(title="Filter controls"):
@@ -75,20 +78,25 @@ with ui.layout_column_wrap(fill=False):
         def bill_depth():
             return f"{filtered_df()['bill_depth_mm'].mean():.1f} mm"
 
+# Use Altair to replace the scatterplot with an interactive Plotly chart
+ui.input_selectize(
+    "var", "Select variable",
+    choices=["bill_length_mm", "body_mass_g"]
+)
+
+@render_altair
+def hist():
+    import altair as alt
+    from palmerpenguins import load_penguins
+    df = load_penguins()
+    return alt.Chart(df).mark_bar().encode(
+        x=alt.X(f"{input.var()}:Q", bin=True),
+        y="count()"
+    )
+
 
 with ui.layout_columns():
-    with ui.card(full_screen=True):
-        ui.card_header("Bill length and depth")
-
-        @render.plot
-        def length_depth():
-            return sns.scatterplot(
-                data=filtered_df(),
-                x="bill_length_mm",
-                y="bill_depth_mm",
-                hue="species",
-            )
-
+   
     with ui.card(full_screen=True):
         ui.card_header("Penguin Data", style="color: purple")
 
