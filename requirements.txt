@@ -1,3 +1,7 @@
+altair
+anywidget
+palmerpenguins
+jsonschema
 faicons
 shiny
 shinylive
