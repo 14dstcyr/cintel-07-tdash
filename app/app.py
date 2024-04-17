@@ -6,7 +6,7 @@ from shiny import reactive
 from shiny.express import input, render, ui
 import palmerpenguins 
 from shinywidgets import render_altair
-import soft_dependencies
+
 
 
 df = palmerpenguins.load_penguins()
