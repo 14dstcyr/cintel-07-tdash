@@ -2,9 +2,3 @@ altair
 anywidget
 palmerpenguins
 jsonschema
-faicons
-shiny
-shinylive
-seaborn
-pandas
-palmerpenguins
