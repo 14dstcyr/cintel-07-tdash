@@ -97,5 +97,13 @@ git push -u origin main
 
 ## Enable GitHub Pages
 
+
+## After the whole project has been completed, when you are making changes to the dashboard to replace the Seaborn scatterplot and use a Plotly Inacteractive Chart instead
+- Add the following code a third tab in the Shiny Playground called soft_dependencies.py
+# Temporary workaround to inform shinylive of soft dependencies
+import anywidget
+import jsonschema
+import mypy_extensions
+import toolz 
 Go to your GitHub repo settings and enable GitHub Pages for the docs folder.
 
