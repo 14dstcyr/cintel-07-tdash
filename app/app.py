@@ -48,12 +48,7 @@ with ui.sidebar(title="Filter controls"):
         href="https://shiny.posit.co/py/templates/dashboard/",
         target="_blank",
     )
-    ui.a(
-        "See also",
-        href="https://github.com/14dstcyr/pyshiny-penguins-dashboard-express",
-        target="_blank",
-    )
-
+ 
 
 with ui.layout_column_wrap(fill=False):
     with ui.value_box(showcase=icon_svg("linux"), theme="bg-gradient-purple-blue"):
